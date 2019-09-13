@@ -51,8 +51,8 @@ var askCustomer = function(res){
                         }
                     }
                 }).then(function(answer){
-                    if((res[id].stock_quantity - answer.quant) > 0){
-                        connection.query("UPDATE products SET stock_quantity='" + (res[i].stock_quantity - answer.quant) + "' WHERE product_name='" + product + "'", function(err, res2){
+                    if((res[id].stock_quantity-answer.quant) > 0){
+                        connection.query("UPDATE products SET stock_quantity='" + (res[id].stock_quantity - answer.quant) + "' WHERE product_name='" + product + "'", function(err, res2){
                             console.log("PRODUCT BOUGHT!");
                             makeTable();
                         })
